@@ -24,7 +24,7 @@ uploaded_files = st.sidebar.file_uploader("Drag and drop text files to upload", 
 if uploaded_files:
     documents = []
     for uploaded_file in uploaded_files:
-        text = uploaded_file.read().decode("utf-8")
+        text = uploaded_file.read().decode("iso-8859-1")
         segments = text.split(",")
         documents.extend([segment.strip() for segment in segments if segment.strip()])
 

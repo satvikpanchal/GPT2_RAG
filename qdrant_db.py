@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 
 # Connect to Qdrant
-client = QdrantClient(":memory:")  # Use ":memory:" for an in-memory instance (testing only)
+client = QdrantClient(host="qdrant", port=6333)
 collection_name = "real_time_rag"
 
 # Create a collection with vectors_config
