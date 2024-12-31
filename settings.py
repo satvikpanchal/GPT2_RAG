@@ -1,0 +1,1 @@
+MODEL_NAME = "gpt2-large"
