@@ -7,13 +7,12 @@ import numpy as np
 import plotly.express as px
 import os
 
-# Fix protobuf issue
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 
 # Initialize Qdrant client
 def initialize_qdrant_client():
     try:
-        client = QdrantClient(host="localhost", port=6333)
+        client = QdrantClient("in:memory")
         return client
     except Exception as e:
         st.error(f"Unable to connect to Qdrant: {e}")
