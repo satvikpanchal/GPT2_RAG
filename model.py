@@ -19,7 +19,7 @@ def generate_response(model, tokenizer, user_input, context, max_length):
 
         # Tokenize and truncate
         inputs = tokenizer(full_context, return_tensors="pt", truncation=True, max_length=1024).to(model.device)
-        
+
         # Generate response
         outputs = model.generate(
             inputs.input_ids,
@@ -29,11 +29,11 @@ def generate_response(model, tokenizer, user_input, context, max_length):
             top_k=50,
             top_p=0.9
         )
-        
+
         # Decode response
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
         logging.info(f"Generated Response: {response}")
-        
+
         return response.split(user_input)[-1].strip()
     except Exception as e:
         logging.error(f"Error during generation: {e}")

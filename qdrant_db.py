@@ -5,7 +5,7 @@ import torch
 import uuid
 
 # Connect to Qdrant
-client = QdrantClient(host="localhost", port=6333)  # Replace with your Qdrant host and port
+client = QdrantClient(host="localhost", port=6333, timeout=30.0)
 collection_name = "real_time_rag"
 
 # Create a collection with vectors_config
