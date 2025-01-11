@@ -70,7 +70,7 @@ except Exception as e:
     st.stop()
 
 # Streamlit App Title
-st.title("Satvik-GPT with RAG")
+st.title("Satvik-GPT")
 st.subheader("Enhanced by GPT-2 and Qdrant")
 
 # Sidebar: File Upload
